@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <div class="header">
+  <title>Photosite</title>
+  </div>
+<style>
+table, th, td {
+border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  font-family: "Arial Black";
+}
+th {
+  font-family:"Source Sans Pro", "Arial", "sans-serif";
+  text-align: center;
+  color: saddlebrown;
+  background-color: floralwhite;
+  height: 60px;
+  font-size: x-large;
+}
+tr{
+  height: 40px;
+}
+.header {
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+</head>
+<body bgcolor ="#fffafa">
+<div class="header">
+    <h1>PHOTOSITE</h1>
+</div>
+<h2 style="font-family: Calibri; color: green; text-align: center;
+    font-size: xx-large">User Index Page</h2>
+<div align="center">
+    <table>
+      <col width="130">
+      <col width="150">
+      <col width="150">
+      <tr>
+        <th>User</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.id, {action: "index", :controller => "photo", :id=> user.id }  %></td>
+          <td><%= link_to user.first_name, {action: "index", :controller => "photo", :id=> user.id } %></td>
+          <td><%= link_to user.last_name, {action: "index", :controller => "photo", :id=> user.id }  %></td>
+        </tr>
+      <% end %>
+    </table>
+  </center>
+</div>
+</body>
+</html>
